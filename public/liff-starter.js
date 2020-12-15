@@ -128,11 +128,11 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "You've successfully sent a message! Hooray!"
+                'text': "Hello Orderin , Aku pesen" + produk
             }]).then(function() {
-                window.alert('Message sent');
+                window.alert('Pesanan Terkirim');
             }).catch(function(error) {
-                window.alert('Error sending message: ' + error);
+                window.alert('Yahh , ada yang salah di :' + error);
             });
         }
     });
