@@ -1,5 +1,5 @@
 {
-    "name": "LINE LIFF v2 Starter",
-    "description": "Sample LIFF v2 application",
-    "repository": "https://github.com/line/line-liff-v2-starter"
+    "name": "liff-orderkeun",
+    "description": "Aplikasi LIFF untuk memesan makanan secara online melalui aplikasi Line",
+    "repository": "https://github.com/XieSandi/LIFF-Orderkeun"
 }

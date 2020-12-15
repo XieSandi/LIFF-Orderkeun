@@ -1,7 +1,7 @@
 {
-  "name": "line-liff-v2-starter",
+  "name": "liff-orderkeun",
   "version": "1.0.0",
-  "description": "This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.biz/en/docs/liff/overview/).",
+  "description": "Aplikasi LIFF untuk memesan makanan secara online melalui aplikasi Line",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/line/line-liff-v2-starter"
+    "url": "https://github.com/XieSandi/LIFF-Orderkeun"
   },
   "license": "MIT",
   "dependencies": {
