@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="getProfileButton">
+<body>
     <div id="liffAppContent">
 
         <!-- ACTION BUTTONS -->
@@ -22,9 +22,9 @@
                 <button id="scanQrCodeButton">Open QR Code Reader</button>
                 <button id="sendMessageButton">Send Message</button>
             </div>
-            <div class="buttonRow">
+            <div class="buttonRow" onload="getProfileButton">
                 <button id="getAccessToken">Get Access Token</button>
-                <!-- <button id="getProfileButton">Get Profile</button> -->
+                <button id="getProfileButton">Get Profile</button>
             </div>
             <div class="buttonRow">
                 <button id="shareTargetPicker">Open Share Target Picker</button>
