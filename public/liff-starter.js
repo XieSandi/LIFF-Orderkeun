@@ -165,9 +165,8 @@ function registerButtonHandlers() {
     });
 
     // get profile call
-function fetchProfile() {
+    document.getElementById('getProfileButton').addEventListener('click', function() {
         liff.getProfile().then(function(profile) {
-            document.getElementById('fetchNama').textContent = profile.displayName;
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
 
