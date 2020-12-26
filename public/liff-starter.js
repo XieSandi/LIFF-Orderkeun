@@ -80,9 +80,10 @@ function fetchProfile(){
   liff.getProfile()
     .then(profile => {
       document.getElementById('fetchName').textContent = profile.displayName;
+      document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      const userName = profile.displayName
-      console.log(userName);
+      console.log(profile.displayName);
+      console.log(profile.profile.pictureUrl);
     })
     .catch((err) => {
       console.log('error', err);
