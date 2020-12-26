@@ -87,8 +87,6 @@ function fetchProfile(){
         console.log(classText);
       }else{}
       console.log(profile.displayName);
-      console.log(profile.profile.pictureUrl);
-      console.log()
     })
     .catch((err) => {
       console.log('error', err);
