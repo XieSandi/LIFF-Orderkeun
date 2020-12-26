@@ -82,8 +82,13 @@ function fetchProfile(){
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
+      document.getElementById('fetchName').class = classText;
+      if (classText =="apa"){
+        console.log(classText);
+      }else{}
       console.log(profile.displayName);
       console.log(profile.profile.pictureUrl);
+      console.log()
     })
     .catch((err) => {
       console.log('error', err);
@@ -141,6 +146,8 @@ function registerButtonHandlers() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
         } else {
+          var showConfirm = confirm("Pesan yang ini ?")
+          if (showConfirm == true){
             liff.sendMessages([{
                 'type': 'text',
                 'text': "You've successfully sent a message! Hooray!"
@@ -150,6 +157,8 @@ function registerButtonHandlers() {
                 window.alert('Error sending message: ' + error);
             });
             liff.closeWindow();
+            }
+          else{}
         }
     });
 
