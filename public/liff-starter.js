@@ -83,9 +83,7 @@ function fetchProfile(){
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
       var classText = document.getElementById('fetchName').class;
-      if (classText =="apa"){
-        console.log(classText);
-      }else{}
+      console.log(classText);
       console.log(profile.displayName);
     })
     .catch((err) => {
