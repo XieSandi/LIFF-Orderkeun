@@ -186,6 +186,28 @@ function registerButtonHandlers() {
         });
     });
 
+function fetchProfile() {
+        liff.getProfile().then(function(profile) {
+          document.getElementById('fetchName').textContent = profile.displayName;
+            document.getElementById('userIdProfileField').textContent = profile.userId;
+            document.getElementById('displayNameField').textContent = profile.displayName;
+
+            const profilePictureDiv = document.getElementById('profilePictureDiv');
+            if (profilePictureDiv.firstElementChild) {
+                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+            }
+            const img = document.createElement('img');
+            img.src = profile.pictureUrl;
+            img.alt = 'Profile Picture';
+            profilePictureDiv.appendChild(img);
+
+            document.getElementById('statusMessageField').textContent = profile.statusMessage;
+            toggleProfileData();
+        }).catch(function(error) {
+            window.alert('Error getting profile: ' + error);
+        });
+    });
+
     document.getElementById('shareTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {
             liff.shareTargetPicker([{
