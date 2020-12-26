@@ -122,7 +122,7 @@ function registerButtonHandlers() {
     });
 
     // sendMessages call
-    document.getElementById('sendMessageButton').addEventListener('click', function(produk) {
+    document.getElementById('sendMessageButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
         } else {
