@@ -149,6 +149,7 @@ function registerButtonHandlers() {
             }).catch(function(error) {
                 window.alert('Error sending message: ' + error);
             });
+            liff.closeWindow();
         }
     });
 
