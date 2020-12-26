@@ -82,7 +82,7 @@ function fetchProfile(){
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      var classText = document.getElementById('fetchName').class;
+      var classText = document.getElementById('fetchPhoto').class;
       console.log(classText);
       console.log(profile.displayName);
     })
