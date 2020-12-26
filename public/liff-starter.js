@@ -267,7 +267,7 @@ function toggleQrCodeReader() {
 function ambilNama(){
   liff.getProfile()
     .then(profile => {
-      const name = profile.displayName
+      const userName = profile.displayName
   })
     .catch((err) => {
       console.log('error', err);
