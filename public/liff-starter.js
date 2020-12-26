@@ -1,6 +1,6 @@
 window.onload = function() {
     const useNodeJS = true;   // if you are not using a node server, set this value to false
-    const defaultLiffId = "1655380958-5NVKkZBY";   // change the default LIFF value if you are not using a node server
+    const defaultLiffId = "";   // change the default LIFF value if you are not using a node server
 
     // DO NOT CHANGE THIS
     let myLiffId = "";
@@ -107,7 +107,7 @@ function registerButtonHandlers() {
     // openWindow call
     document.getElementById('openWindowButton').addEventListener('click', function() {
         liff.openWindow({
-            url: 'https://liff-orderkeun.herokuapp.com/',
+            url: 'https://line.me',
             external: true
         });
     });
@@ -128,11 +128,11 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "Hello Orderin , Aku pesen" + produk
+                'text': "You've successfully sent a message! Hooray!"
             }]).then(function() {
-                window.alert('Pesanan Terkirim');
+                window.alert('Message sent');
             }).catch(function(error) {
-                window.alert('Yahh , ada yang salah di :' + error);
+                window.alert('Error sending message: ' + error);
             });
         }
     });
@@ -165,29 +165,9 @@ function registerButtonHandlers() {
     });
 
     // get profile call
-    document.getElementById('getProfileButton').addEventListener('onclick', function() {
+    document.getElementById('getProfileButton').addEventListener('load', function() {
         liff.getProfile().then(function(profile) {
-            setNama = profile.displayName;
-
-            const profilePictureDiv = document.getElementById('profilePictureDiv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            const img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = 'Profile Picture';
-            profilePictureDiv.appendChild(img);
-
-            document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();
-        }).catch(function(error) {
-            window.alert('Error getting profile: ' + error);
-        });
-    });
-
-    // get profile call
-    document.getElementById('start').addEventListener('onload', function() {
-        liff.getProfile().then(function(profile) {
+            document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
 
             const profilePictureDiv = document.getElementById('profilePictureDiv');
@@ -262,16 +242,6 @@ function toggleProfileData() {
 */
 function toggleQrCodeReader() {
     toggleElement('scanQr');
-}
-
-function ambilNama(){
-  liff.getProfile()
-    .then(profile => {
-      const userName = profile.displayName
-  })
-    .catch((err) => {
-      console.log('error', err);
-  });
 }
 
 /**
