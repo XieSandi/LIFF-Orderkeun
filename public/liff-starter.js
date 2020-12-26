@@ -264,6 +264,16 @@ function toggleQrCodeReader() {
     toggleElement('scanQr');
 }
 
+function ambilNama(){
+  liff.getProfile()
+    .then(profile => {
+      const name = profile.displayName
+  })
+    .catch((err) => {
+      console.log('error', err);
+  });
+}
+
 /**
 * Toggle specified element
 * @param {string} elementId The ID of the selected element
