@@ -82,7 +82,7 @@ function fetchProfile(){
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      document.getElementById('fetchName').class = classText;
+      var classText = document.getElementById('fetchName').class;
       if (classText =="apa"){
         console.log(classText);
       }else{}
