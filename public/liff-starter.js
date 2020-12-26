@@ -84,7 +84,6 @@ function displayLiffData() {
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
     document.getElementById('deviceOS').textContent = liff.getOS();
-    document.getElementById('userName').textContent = liff.getProfile(profile.displayName);
 }
 
 /**
@@ -166,8 +165,9 @@ function registerButtonHandlers() {
     });
 
     // get profile call
-    document.getElementById('getProfileButton').addEventListener('load', function() {
+function fetchProfile() {
         liff.getProfile().then(function(profile) {
+            document.getElementById('fetchNama').textContent = profile.displayName;
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
 
