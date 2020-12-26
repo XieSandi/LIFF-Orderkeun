@@ -122,7 +122,7 @@ function registerButtonHandlers() {
     // openWindow call
     document.getElementById('openWindowButton').addEventListener('click', function() {
         liff.openWindow({
-            url: 'https://line.me',
+            url: 'https://liff-orderkeun.herokuapp.com',
             external: true
         });
     });
