@@ -79,6 +79,8 @@ function initializeApp() {
 function fetchProfile(){
   liff.getProfile()
     .then(profile => {
+      document.getElementById('fetchName').textContent = profile.displayName;
+      /** Testing **/
       const userName = profile.displayName
       console.log(userName);
     })
