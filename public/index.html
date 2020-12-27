@@ -8,10 +8,13 @@
     </head>
     <body>
         <div id="liffAppContent">
+
+          <!-- Fetching clinet profile when page opened -->
           <div onload="fetchProfile()">
             <p> Hallo <span id="fetchName"></span></p>
             <img class="apa" id="fetchPhoto"></img>
           </div>
+
             <!-- ACTION BUTTONS -->
             <div class="buttonGroup">
                 <div class="buttonRow">
@@ -31,6 +34,7 @@
                 </div>
             </div>
             <div id="shareTargetPickerMessage"></div>
+
             <!-- ACCESS TOKEN DATA -->
             <div id="accessTokenData" class="hidden textLeft">
                 <h2>Access Token</h2>
@@ -42,8 +46,9 @@
                     </tr>
                 </table>
             </div>
+
             <!-- SCAN QR RESULT -->
-            <div id="scanQr" class="hidden textLeft">
+            <!-- <div id="scanQr" class="hidden textLeft">
                 <h2>QR Code reader</h2>
                 <a href="#" onclick="toggleQrCodeReader()">Close QR Code Reader Result</a>
                 <table>
@@ -52,9 +57,10 @@
                         <td id="scanQrField"></td>
                     </tr>
                 </table>
-            </div>
+            </div> -->
+
             <!-- PROFILE INFO -->
-            <div id="profileInfo" class="hidden textLeft">
+            <!-- <div id="profileInfo" class="hidden textLeft">
                 <h2>Profile</h2>
                 <a href="#" onclick="toggleProfileData()">Close Profile</a>
                 <div id="profilePictureDiv">
@@ -73,7 +79,7 @@
                         <td id="statusMessageField"></td>
                     </tr>
                 </table>
-            </div>
+            </div> -->
 
             <!-- LOGIN LOGOUT BUTTONS -->
             <div class="buttonGroup">
