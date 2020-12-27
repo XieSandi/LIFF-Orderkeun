@@ -98,9 +98,7 @@ function displayIsInClientInfo() {
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via Line.';
     } else {
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via browser';
-        document.getElementById('openWindowButtonf').classList.toggle('hidden');
-        document.getElementById('closeWindowButton').classList.toggle('hidden');
-        document.getElementById('shareTargetPicker').classList.toggle('hidden');
+        // document.getElementById('shareTargetPicker').classList.toggle('hidden');
     }
 }
 
