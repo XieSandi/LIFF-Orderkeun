@@ -81,7 +81,7 @@ function fetchProfile(){
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      console.log(profile.displayName);
+      console.log('DisplayName : 'profile.displayName);
     })
     .catch((err) => {
       console.log('error', err);
@@ -99,6 +99,7 @@ function displayIsInClientInfo() {
     } else {
         document.getElementById('openWindowButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via browser';
+        document.getElementById('shareTargetPicker').classList.toggle('hidden');
     }
 }
 
@@ -181,16 +182,16 @@ function toggleAccessToken() {
 /**
 * Toggle profile info field
 */
-// function toggleProfileData() {
-//     toggleElement('profileInfo');
-// }
+function toggleProfileData() {
+    toggleElement('profileInfo');
+}
 
 /**
 * Toggle scanCode result field
 */
-// function toggleQrCodeReader() {
-//     toggleElement('scanQr');
-// }
+function toggleQrCodeReader() {
+    toggleElement('scanQr');
+}
 
 /**
 * Toggle specified element
