@@ -74,14 +74,14 @@ function initializeApp() {
     }
 }
 
-// fetching DisplayName dan Photo line user when app loaded
+// fetching username dan photo profil line user when app loaded
 function fetchProfile(){
   liff.getProfile()
     .then(profile => {
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      console.log('DisplayName : '+profile.displayName);
+      console.log(profile.displayName);
     })
     .catch((err) => {
       console.log('error', err);
