@@ -8,7 +8,10 @@
     </head>
     <body>
         <div id="liffAppContent">
-
+          <script>
+            const liffId = 'my-liff-id'
+            liff.init({ liffId })
+          </script>
           <!-- Fetching clinet profile when page opened -->
           <div onload="fetchProfile()">
             <p> Hallo <span id="fetchName"></span></p>
