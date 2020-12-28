@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LIFF Starter</title>
   <link rel="stylesheet" href="style.css">
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,24 +13,31 @@
 
 <body>
   <div id="liffAppContent">
-
-    <!-- ACTION BUTTONS -->
     <div class="container">
-    <!-- Fetching clinet profile when page opened -->
-    <div class="card" style="width: 18rem;">
-      <img class="img-circle img-thumbnail" id="fetchPhoto">
-      <p> Hallo <span id="fetchName"></span></p>
-    </div>
+      <!-- Fetching clinet profile when page opened -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card text-center" style="width: 18rem;">
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-12">
           <button class="btn btn-success" id="liffLoginButton" style="display:none;">Log in</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><img class="img-circle img-thumbnail" id="fetchPhoto"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p> Hallo <span id="fetchName"></span></p>
+        </div>
       </div>
       <div class="buttonGroup">
         <div class="buttonRow">
           <button id="sendMessageButton">Send Message</button>
         </div>
       </div>
-
       <!-- bottom buttons -->
       <div class="buttonGroup">
         <div class="buttonRow">
@@ -49,8 +55,7 @@
   <!-- LIFF ID ERROR -->
   <div id="liffIdErrorMessage" class="hidden">
     <p>You have not assigned any value for LIFF ID.</p>
-    <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku
-      account follwing the below steps: </p>
+    <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
     <code id="code-block">
       <ol>
         <li>Go to `Dashboard` in your Heroku account.</li>
@@ -61,14 +66,12 @@
       </ol>
     </code>
     <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
-    <p>For more information about how to add your LIFF ID, see <a
-        href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
+    <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
   </div>
   <!-- LIFF INIT ERROR -->
   <div id="liffInitErrorMessage" class="hidden">
     <p>Something went wrong with LIFF initialization.</p>
-    <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in
-      the process of <code>liff.init()</code>.</p>
+    <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
   </div>
   <!-- NODE.JS LIFF ID ERROR -->
   <div id="nodeLiffIdErrorMessage" class="hidden">
@@ -76,6 +79,7 @@
   </div>
   <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script src="liff-starter.js"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 
 </html>
