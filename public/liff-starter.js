@@ -74,14 +74,14 @@ function initializeApp() {
     }
 }
 
-// ambil username dan photo profil line user
+// fetching DisplayName dan Photo line user when app loaded
 function fetchProfile(){
   liff.getProfile()
     .then(profile => {
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      console.log(profile.displayName);
+      console.log('DisplayName : 'profile.displayName);
     })
     .catch((err) => {
       console.log('error', err);
@@ -182,16 +182,16 @@ function toggleAccessToken() {
 /**
 * Toggle profile info field
 */
-function toggleProfileData() {
-    toggleElement('profileInfo');
-}
+// function toggleProfileData() {
+//     toggleElement('profileInfo');
+// }
 
 /**
 * Toggle scanCode result field
 */
-function toggleQrCodeReader() {
-    toggleElement('scanQr');
-}
+// function toggleQrCodeReader() {
+//     toggleElement('scanQr');
+// }
 
 /**
 * Toggle specified element
