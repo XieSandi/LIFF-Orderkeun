@@ -116,15 +116,6 @@ function registerButtonHandlers() {
         });
     });
 
-    // closeWindow call
-    // document.getElementById('closeWindowButton').addEventListener('click', function() {
-    //     if (!liff.isInClient()) {
-    //         sendAlertIfNotInClient();
-    //     } else {
-    //         liff.closeWindow();
-    //     }
-    // });
-
     // sendMessages call
     document.getElementById('sendMessageButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
@@ -146,22 +137,6 @@ function registerButtonHandlers() {
         }
     });
 
-    // scanCode call
-    // document.getElementById('scanQrCodeButton').addEventListener('click', function() {
-    //     if (!liff.isInClient()) {
-    //         sendAlertIfNotInClient();
-    //     } else {
-    //         liff.scanCode().then(result => {
-    //             // e.g. result = { value: "Hello LIFF app!" }
-    //             const stringifiedResult = JSON.stringify(result);
-    //             document.getElementById('scanQrField').textContent = stringifiedResult;
-    //             toggleQrCodeReader();
-    //         }).catch(err => {
-    //             document.getElementById('scanQrField').textContent = "scanCode failed!";
-    //         });
-    //     }
-    // });
-
     // get access token
     document.getElementById('getAccessToken').addEventListener('click', function() {
         if (!liff.isLoggedIn() && !liff.isInClient()) {
@@ -172,41 +147,6 @@ function registerButtonHandlers() {
             toggleAccessToken();
         }
     });
-
-    // get profile call
-    // document.getElementById('getProfileButton').addEventListener('click', function() {
-    //     liff.getProfile().then(function(profile) {
-    //         document.getElementById('userIdProfileField').textContent = profile.userId;
-    //         document.getElementById('displayNameField').textContent = profile.displayName;
-    //
-    //         const profilePictureDiv = document.getElementById('profilePictureDiv');
-    //         if (profilePictureDiv.firstElementChild) {
-    //             profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-    //         }
-    //         const img = document.createElement('img');
-    //         img.src = profile.pictureUrl;
-    //         img.alt = 'Profile Picture';
-    //         profilePictureDiv.appendChild(img);
-    //
-    //         document.getElementById('statusMessageField').textContent = profile.statusMessage;
-    //         toggleProfileData();
-    //     }).catch(function(error) {
-    //         window.alert('Error getting profile: ' + error);
-    //     });
-    // });
-
-    // document.getElementById('shareTargetPicker').addEventListener('click', function () {
-    //     if (liff.isApiAvailable('shareTargetPicker')) {
-    //         liff.shareTargetPicker([{
-    //             'type': 'text',
-    //             'text': 'Hello, World!'
-    //         }]).then(
-    //             document.getElementById('shareTargetPickerMessage').textContent = "Share target picker was launched."
-    //         ).catch(function (res) {
-    //             document.getElementById('shareTargetPickerMessage').textContent = "Failed to launch share target picker.";
-    //         });
-    //     }
-    // });
 
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
