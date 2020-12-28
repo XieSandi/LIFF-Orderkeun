@@ -81,7 +81,7 @@ function fetchProfile(){
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      console.log('DisplayName : 'profile.displayName);
+      console.log('DisplayName : '+profile.displayName);
     })
     .catch((err) => {
       console.log('error', err);
