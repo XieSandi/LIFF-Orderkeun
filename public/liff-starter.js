@@ -61,7 +61,6 @@ function initializeLiff(myLiffId) {
  * Initialize the app by calling functions handling individual app components
  */
 function initializeApp() {
-    // displayLiffData();
     displayIsInClientInfo();
     registerButtonHandlers();
     fetchProfile();
@@ -87,6 +86,27 @@ function fetchProfile(){
       console.log('error', err);
     });
 }
+
+function pesan(paket){
+    if (!liff.isInClient()) {
+        sendAlertIfNotInClient();
+    } else {
+      var showConfirm = confirm("Pesan yang ini ?" + paket)
+      if (showConfirm == true){
+        liff.sendMessages([{
+            'type': 'text',
+            'text': "Kamu Pesen" + paket
+        }]).then(function() {
+            window.alert('Message sent');
+        }).catch(function(error) {
+            window.alert('Error sending message: ' + error);
+        });
+        liff.closeWindow();
+        }
+      else{}
+    }
+}
+
 
 /**
 * Toggle the login/logout buttons based on the isInClient status, and display a message accordingly
