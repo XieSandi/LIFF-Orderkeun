@@ -64,42 +64,29 @@ function initializeApp() {
     // displayLiffData();
     displayIsInClientInfo();
     registerButtonHandlers();
-    // fetchProfile();
+    fetchProfile();
 
     // check if the user is logged in/out, and disable inappropriate button
     if (liff.isLoggedIn()) {
         document.getElementById('liffLoginButton').hidden = true;
-
-        function fetchProfile(){
-          liff.getProfile()
-            .then(profile => {
-              document.getElementById('fetchName').textContent = profile.displayName;
-              document.getElementById('fetchPhoto').src = profile.pictureUrl;
-              /** Testing **/
-              console.log(profile.displayName);
-            })
-            .catch((err) => {
-              console.log('error', err);
-            });
-        }
     } else {
         document.getElementById('liffLogoutButton').hidden = true;
     }
 }
 
 // ambil username dan photo profil line user
-// function fetchProfile(){
-//   liff.getProfile()
-//     .then(profile => {
-//       document.getElementById('fetchName').textContent = profile.displayName;
-//       document.getElementById('fetchPhoto').src = profile.pictureUrl;
-//       /** Testing **/
-//       console.log(profile.displayName);
-//     })
-//     .catch((err) => {
-//       console.log('error', err);
-//     });
-// }
+function fetchProfile(){
+  liff.getProfile()
+    .then(profile => {
+      document.getElementById('fetchName').textContent = profile.displayName;
+      document.getElementById('fetchPhoto').src = profile.pictureUrl;
+      /** Testing **/
+      console.log(profile.displayName);
+    })
+    .catch((err) => {
+      console.log('error', err);
+    });
+}
 
 /**
 * Toggle the login/logout buttons based on the isInClient status, and display a message accordingly
