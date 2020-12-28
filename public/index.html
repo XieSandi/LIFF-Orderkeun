@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LIFF Starter</title>
   <!-- <link rel="stylesheet" href="style.css"> -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
+  <div container
   <div id="liffAppContent">
     <!-- Fetching clinet profile when page opened -->
     <div>
@@ -22,7 +21,9 @@
     <!-- ACTION BUTTONS -->
     <div class="container">
       <div class="row">
-        <div class="col-md-12"><button id="liffLoginButton">Log in</button></div>
+        <div class="col-md-12">
+          <button id="liffLoginButton">Log in</button>
+        </div>
       </div>
     </div>
     <div class="buttonGroup">
@@ -72,6 +73,7 @@
   <div id="nodeLiffIdErrorMessage" class="hidden">
     <p>Unable to receive the LIFF ID as an environment variable.</p>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script src="liff-starter.js"></script>
 </body>
