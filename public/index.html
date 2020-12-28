@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LIFF Starter</title>
   <link rel="stylesheet" href="style.css">
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,41 +14,43 @@
 
 <body>
   <div id="liffAppContent">
-    <!-- Fetching clinet profile when page opened -->
-    <div>
-      <p> Hallo <span id="fetchName"></span></p>
-      <img class="img-circle" id="fetchPhoto">
-    </div>
+
     <!-- ACTION BUTTONS -->
     <div class="container">
+    <!-- Fetching clinet profile when page opened -->
+    <div class="card" style="width: 18rem;">
+      <img class="img-circle img-thumbnail" id="fetchPhoto">
+      <p> Hallo <span id="fetchName"></span></p>
+    </div>
       <div class="row">
         <div class="col-md-12">
           <button class="btn btn-success" id="liffLoginButton" style="display:none;">Log in</button></div>
       </div>
-    </div>
-    <div class="buttonGroup">
-      <div class="buttonRow">
-        <button id="sendMessageButton">Send Message</button>
+      <div class="buttonGroup">
+        <div class="buttonRow">
+          <button id="sendMessageButton">Send Message</button>
+        </div>
       </div>
-    </div>
 
-    <!-- bottom buttons -->
-    <div class="buttonGroup">
-      <div class="buttonRow">
-        <button class="btn btn-danger" id="liffLogoutButton" style="display:none;">Log out</button>
-      </div>
-      <div id="statusMessage">
-        <div id="isInClientMessage"></div>
-      </div>
-      <div class="buttonRow">
-        <button class="btn btn-primary" id="openWindowButton" style="display:none;">Open External Window</button>
+      <!-- bottom buttons -->
+      <div class="buttonGroup">
+        <div class="buttonRow">
+          <button class="btn btn-danger" id="liffLogoutButton" style="display:none;">Log out</button>
+        </div>
+        <div id="statusMessage">
+          <div id="isInClientMessage"></div>
+        </div>
+        <div class="buttonRow">
+          <button class="btn btn-primary" id="openWindowButton" style="display:none;">Open External Window</button>
+        </div>
       </div>
     </div>
   </div>
   <!-- LIFF ID ERROR -->
   <div id="liffIdErrorMessage" class="hidden">
     <p>You have not assigned any value for LIFF ID.</p>
-    <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
+    <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku
+      account follwing the below steps: </p>
     <code id="code-block">
       <ol>
         <li>Go to `Dashboard` in your Heroku account.</li>
@@ -59,12 +61,14 @@
       </ol>
     </code>
     <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
-    <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
+    <p>For more information about how to add your LIFF ID, see <a
+        href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
   </div>
   <!-- LIFF INIT ERROR -->
   <div id="liffInitErrorMessage" class="hidden">
     <p>Something went wrong with LIFF initialization.</p>
-    <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
+    <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in
+      the process of <code>liff.init()</code>.</p>
   </div>
   <!-- NODE.JS LIFF ID ERROR -->
   <div id="nodeLiffIdErrorMessage" class="hidden">
