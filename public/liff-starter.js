@@ -96,13 +96,19 @@ function pesan(paket,harga){
       if (showConfirm == true){
         liff.sendMessages([{
             'type': 'text',
-            'text': "Hallo!",
+            'text': "Hallo!"}])
+        liff.sendMessages([{
+            'type': 'text',
             'text': "Aku pesen '" + paket + "' seharga " + harga
         }]).then(function() {
             window.alert('Message sent');
         }).catch(function(error) {
             window.alert('Error sending message: ' + error);
         });
+        //baut keyword di line bot
+        liff.sendMessages([{
+            'type': 'text',
+            'text': "^.^"}])
         liff.closeWindow();
         }
       else{}
@@ -158,7 +164,7 @@ function registerButtonHandlers() {
 * Alert the user if LIFF is opened in an external browser and unavailable buttons are tapped
 */
 function sendAlertIfNotInClient() {
-    alert('This button is unavailable as LIFF is currently being opened in an external browser.');
+    alert('Kamu lagi buka aplikasi nya di browser. pindah ke Line nggih');
 }
 
 /**
