@@ -4,8 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIFF Starter</title>
-  <!--<link rel="stylesheet" href="style.css">-->
+  <title>Orderkeun</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,21 +13,45 @@
 
 <body>
   <div id="liffAppContent">
-    <div class="container">
-      <!-- Fetching clinet profile when page opened -->
+    <div class="container py-3">
       <div class="mx-auto">
         <div class="card">
-          
+
           <!-- Header Section -->
           <div class="card-header text-center">
-            <img class="img-circle img-thumbnail" id="fetchPhoto" width="100" height="100">
-            <h2 class="py-1"> Hallo <span id="fetchName"></span></h2>
+            <img class="rounded-circle img-thumbnail" id="fetchPhoto" width="100" height="100">
+            <h1 class="py-1"> Hallo <span id="fetchName"></span></h1>
             <button class="btn btn-success btl-lg" id="liffLoginButton" style="display:none;">Log in</button>
           </div>
 
           <!-- Center Section -->
           <div class="card-body text-center">
-            <img class="img-circle img-thumbnail" id="fetchPhoto" width="100" height="100">
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Laper ? Sini di Orderkeun !</h1>
+                <h2 class="my-2">Ini Menu nya!</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="card-title">Paket Hemat</h3>
+                    <h5 class="card-text">Rp 30.000,- / Paket</h5> 
+                    <button id="sendMessageButton" class="btn btn-primary btn-block">Go somewhere</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="card-title">Paket Kenyang</h3>
+                    <h5 class="card-text">Rp 50.000,- / Paket</h5>  
+                    <button id="sendMessageButton" class="btn btn-primary btn-block">Go somewhere</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Footer Section-->
@@ -38,21 +61,17 @@
                 <button class="btn btn-danger" id="liffLogoutButton" style="display:none;">Log out</button>
               </div>
               <div id="statusMessage">
-                <div id="isInClientMessage" class="my-2"></div>
+                <h6 id="isInClientMessage" class="my-2"></h6>
               </div>
               <div class="buttonRow">
-                <button class="btn btn-primary" id="openWindowButton" style="display:none;">Open External Window</button>
+                <button class="btn btn-link" id="openWindowButton">Buka di Browser</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="buttonGroup">
-      <div class="buttonRow">
-        <button id="sendMessageButton">Send Message</button>
-      </div>
-    </div>
+
     <!-- LIFF ID ERROR -->
     <div id="liffIdErrorMessage" style="display:none;">
       <p>You have not assigned any value for LIFF ID.</p>
@@ -69,11 +88,13 @@
       <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
       <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
     </div>
+
     <!-- LIFF INIT ERROR -->
     <div id="liffInitErrorMessage" style="display:none;">
       <p>Something went wrong with LIFF initialization.</p>
       <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
     </div>
+
     <!-- NODE.JS LIFF ID ERROR -->
     <div id="nodeLiffIdErrorMessage" style="display:none;">
       <p>Unable to receive the LIFF ID as an environment variable.</p>
@@ -81,7 +102,6 @@
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script src="liff-starter.js"></script>
   </div>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 
 </html>
