@@ -68,9 +68,9 @@ function initializeApp() {
 
     // check if the user is logged in/out, and hidden inappropriate button
     if (liff.isLoggedIn()) {
-        document.getElementById('liffLoginButton').classList.toggle('hidden');
+        document.getElementById('liffLoginButton').hidden = true;
     } else {
-        document.getElementById('liffLogoutButton').classList.toggle('hidden');
+        document.getElementById('liffLogoutButton').hidden = true;
     }
 }
 
@@ -93,11 +93,11 @@ function fetchProfile(){
 */
 function displayIsInClientInfo() {
     if (liff.isInClient()) {
-        document.getElementById('liffLoginButton').hidden = true;
-        document.getElementById('liffLogoutButton').hidden = true;
+        document.getElementById('liffLoginButton').classList.toggle('hidden');
+        document.getElementById('liffLogoutButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via Line.';
     } else {
-        document.getElementById('openWindowButton').hidden = true;
+        document.getElementById('openWindowButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via browser';
     }
 }
