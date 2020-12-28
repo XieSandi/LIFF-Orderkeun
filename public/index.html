@@ -2,112 +2,86 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LIFF Starter</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+  <!--<link rel="stylesheet" href="style.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
   <div id="liffAppContent">
-  <div class="pt-5 pb-1">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body text-center">
-              <img id="fetchPhoto" class="img-fluid d-block rounded-circle mx-auto" src="https://static.pingendo.com/img-placeholder-3.svg" width="100" height="100">
-              <h6 class="card-subtitle my-2 text-muted">HELLO <span id="fetchName"></span></h6>
-              <button id="liffLoginButton" style="display:none;" class="btn btn-success">Login</button>
-            </div>
+      <!-- Fetching clinet profile when page opened -->
+      <div class="mx-auto">
+        <div class="card">
+          
+          <!-- Header Section -->
+          <div class="card-header text-center">
+            <img class="img-circle img-thumbnail" id="fetchPhoto" width="100" height="100">
+            <h2 class="py-1"> Hallo <span id="fetchName"></span></h2>
+            <button class="btn btn-success btl-lg" id="liffLoginButton" style="display:none;">Log in</button>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="text-center">Menus</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary btn-block">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary btn-block">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="pt-1 pb-5" style="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body text-center"><a class="btn btn-danger" href="#">Logout</a>
-              <h6 class="card-subtitle my-2 text-muted">HELLO</h6>
-              <button id="openWindowButton" class="btn btn-link">Buka di Browser</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- LIFF ID ERROR -->
-  <div id="liffIdErrorMessage" style="display: none;">
-    <p>You have not assigned any value for LIFF ID.</p>
-    <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku
-      account follwing the below steps: </p>
-    <code id="code-block">
-      <ol>
-        <li>Go to `Dashboard` in your Heroku account.</li>
-        <li>Click on the app you just created.</li>
-        <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
-        <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
-        <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
-      </ol>
-    </code>
-    <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
-    <p>For more information about how to add your LIFF ID, see <a
-        href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
-  </div>
+          <!-- Center Section -->
+          <div class="card-body text-center">
+            <img class="img-circle img-thumbnail" id="fetchPhoto" width="100" height="100">
+          </div>
 
-  <!-- LIFF INIT ERROR -->
-  <div id="liffInitErrorMessage" style="display: none;">
-    <p>Something went wrong with LIFF initialization.</p>
-    <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in
-      the process of <code>liff.init()</code>.</p>
+          <!-- Footer Section-->
+          <div class="card-footer text-center">
+            <div class="buttonGroup">
+              <div class="buttonRow">
+                <button class="btn btn-danger" id="liffLogoutButton" style="display:none;">Log out</button>
+              </div>
+              <div id="statusMessage">
+                <div id="isInClientMessage" class="my-2"></div>
+              </div>
+              <div class="buttonRow">
+                <button class="btn btn-primary" id="openWindowButton" style="display:none;">Open External Window</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonGroup">
+      <div class="buttonRow">
+        <button id="sendMessageButton">Send Message</button>
+      </div>
+    </div>
+    <!-- LIFF ID ERROR -->
+    <div id="liffIdErrorMessage" style="display:none;">
+      <p>You have not assigned any value for LIFF ID.</p>
+      <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
+      <code id="code-block">
+        <ol>
+          <li>Go to `Dashboard` in your Heroku account.</li>
+          <li>Click on the app you just created.</li>
+          <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
+          <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
+          <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+        </ol>
+      </code>
+      <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
+      <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
+    </div>
+    <!-- LIFF INIT ERROR -->
+    <div id="liffInitErrorMessage" style="display:none;">
+      <p>Something went wrong with LIFF initialization.</p>
+      <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
+    </div>
+    <!-- NODE.JS LIFF ID ERROR -->
+    <div id="nodeLiffIdErrorMessage" style="display:none;">
+      <p>Unable to receive the LIFF ID as an environment variable.</p>
+    </div>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script src="liff-starter.js"></script>
   </div>
-
-  <!-- NODE.JS LIFF ID ERROR -->
-  <div id="nodeLiffIdErrorMessage" style="display: none;">
-    <p>Unable to receive the LIFF ID as an environment variable.</p>
-  </div>
-</div>
-  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <script src="liff-starter.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 
 </html>
