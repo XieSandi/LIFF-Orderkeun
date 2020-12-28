@@ -73,7 +73,7 @@ function initializeApp() {
     }
 }
 
-// ambil username dan photo profil line user
+// fetching clinet display name and photo when app on load
 function fetchProfile(){
   liff.getProfile()
     .then(profile => {
@@ -87,6 +87,7 @@ function fetchProfile(){
     });
 }
 
+// function for sending msg into app and fetch chosen product
 function pesan(paket,harga){
     if (!liff.isInClient()) {
         sendAlertIfNotInClient();
@@ -95,7 +96,8 @@ function pesan(paket,harga){
       if (showConfirm == true){
         liff.sendMessages([{
             'type': 'text',
-            'text': "Hallo , Aku Pesen " + paket + " seharga " + harga
+            'text': "Hallo!",
+            'text': "Aku pesen '" + paket + "' seharga " + harga
         }]).then(function() {
             window.alert('Message sent');
         }).catch(function(error) {
