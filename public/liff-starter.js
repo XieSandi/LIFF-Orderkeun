@@ -99,7 +99,6 @@ function displayIsInClientInfo() {
     } else {
         document.getElementById('openWindowButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via browser';
-        document.getElementById('shareTargetPicker').classList.toggle('hidden');
     }
 }
 
