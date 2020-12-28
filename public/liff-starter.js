@@ -64,29 +64,42 @@ function initializeApp() {
     // displayLiffData();
     displayIsInClientInfo();
     registerButtonHandlers();
-    fetchProfile();
+    // fetchProfile();
 
     // check if the user is logged in/out, and disable inappropriate button
     if (liff.isLoggedIn()) {
         document.getElementById('liffLoginButton').hidden = true;
+
+        function fetchProfile(){
+          liff.getProfile()
+            .then(profile => {
+              document.getElementById('fetchName').textContent = profile.displayName;
+              document.getElementById('fetchPhoto').src = profile.pictureUrl;
+              /** Testing **/
+              console.log(profile.displayName);
+            })
+            .catch((err) => {
+              console.log('error', err);
+            });
+        }
     } else {
         document.getElementById('liffLogoutButton').hidden = true;
     }
 }
 
-// fetching username dan photo profil line user when app loaded
-function fetchProfile(){
-  liff.getProfile()
-    .then(profile => {
-      document.getElementById('fetchName').textContent = profile.displayName;
-      document.getElementById('fetchPhoto').src = profile.pictureUrl;
-      /** Testing **/
-      console.log(profile.displayName);
-    })
-    .catch((err) => {
-      console.log('error', err);
-    });
-}
+// ambil username dan photo profil line user
+// function fetchProfile(){
+//   liff.getProfile()
+//     .then(profile => {
+//       document.getElementById('fetchName').textContent = profile.displayName;
+//       document.getElementById('fetchPhoto').src = profile.pictureUrl;
+//       /** Testing **/
+//       console.log(profile.displayName);
+//     })
+//     .catch((err) => {
+//       console.log('error', err);
+//     });
+// }
 
 /**
 * Toggle the login/logout buttons based on the isInClient status, and display a message accordingly
@@ -116,6 +129,15 @@ function registerButtonHandlers() {
         });
     });
 
+    // closeWindow call
+    // document.getElementById('closeWindowButton').addEventListener('click', function() {
+    //     if (!liff.isInClient()) {
+    //         sendAlertIfNotInClient();
+    //     } else {
+    //         liff.closeWindow();
+    //     }
+    // });
+
     // sendMessages call
     document.getElementById('sendMessageButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
@@ -137,14 +159,65 @@ function registerButtonHandlers() {
         }
     });
 
-    // get access token
-    // document.getElementById('getAccessToken').addEventListener('click', function() {
-    //     if (!liff.isLoggedIn() && !liff.isInClient()) {
-    //         alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+    // scanCode call
+    // document.getElementById('scanQrCodeButton').addEventListener('click', function() {
+    //     if (!liff.isInClient()) {
+    //         sendAlertIfNotInClient();
     //     } else {
-    //         const accessToken = liff.getAccessToken();
-    //         document.getElementById('accessTokenField').textContent = accessToken;
-    //         toggleAccessToken();
+    //         liff.scanCode().then(result => {
+    //             // e.g. result = { value: "Hello LIFF app!" }
+    //             const stringifiedResult = JSON.stringify(result);
+    //             document.getElementById('scanQrField').textContent = stringifiedResult;
+    //             toggleQrCodeReader();
+    //         }).catch(err => {
+    //             document.getElementById('scanQrField').textContent = "scanCode failed!";
+    //         });
+    //     }
+    // });
+
+    // get access token
+    document.getElementById('getAccessToken').addEventListener('click', function() {
+        if (!liff.isLoggedIn() && !liff.isInClient()) {
+            alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+        } else {
+            const accessToken = liff.getAccessToken();
+            document.getElementById('accessTokenField').textContent = accessToken;
+            toggleAccessToken();
+        }
+    });
+
+    // get profile call
+    // document.getElementById('getProfileButton').addEventListener('click', function() {
+    //     liff.getProfile().then(function(profile) {
+    //         document.getElementById('userIdProfileField').textContent = profile.userId;
+    //         document.getElementById('displayNameField').textContent = profile.displayName;
+    //
+    //         const profilePictureDiv = document.getElementById('profilePictureDiv');
+    //         if (profilePictureDiv.firstElementChild) {
+    //             profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+    //         }
+    //         const img = document.createElement('img');
+    //         img.src = profile.pictureUrl;
+    //         img.alt = 'Profile Picture';
+    //         profilePictureDiv.appendChild(img);
+    //
+    //         document.getElementById('statusMessageField').textContent = profile.statusMessage;
+    //         toggleProfileData();
+    //     }).catch(function(error) {
+    //         window.alert('Error getting profile: ' + error);
+    //     });
+    // });
+
+    // document.getElementById('shareTargetPicker').addEventListener('click', function () {
+    //     if (liff.isApiAvailable('shareTargetPicker')) {
+    //         liff.shareTargetPicker([{
+    //             'type': 'text',
+    //             'text': 'Hello, World!'
+    //         }]).then(
+    //             document.getElementById('shareTargetPickerMessage').textContent = "Share target picker was launched."
+    //         ).catch(function (res) {
+    //             document.getElementById('shareTargetPickerMessage').textContent = "Failed to launch share target picker.";
+    //         });
     //     }
     // });
 
@@ -175,23 +248,23 @@ function sendAlertIfNotInClient() {
 /**
 * Toggle access token data field
 */
-// function toggleAccessToken() {
-//     toggleElement('accessTokenData');
-// }
+function toggleAccessToken() {
+    toggleElement('accessTokenData');
+}
 
 /**
 * Toggle profile info field
 */
-// function toggleProfileData() {
-//     toggleElement('profileInfo');
-// }
+function toggleProfileData() {
+    toggleElement('profileInfo');
+}
 
 /**
 * Toggle scanCode result field
 */
-// function toggleQrCodeReader() {
-//     toggleElement('scanQr');
-// }
+function toggleQrCodeReader() {
+    toggleElement('scanQr');
+}
 
 /**
 * Toggle specified element
