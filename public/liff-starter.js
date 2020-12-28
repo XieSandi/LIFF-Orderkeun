@@ -66,7 +66,7 @@ function initializeApp() {
     registerButtonHandlers();
     fetchProfile();
 
-    // check if the user is logged in/out, and disable inappropriate button
+    // check if the user is logged in/out, and hidden inappropriate button
     if (liff.isLoggedIn()) {
         document.getElementById('liffLoginButton').hidden = true;
     } else {
@@ -137,15 +137,15 @@ function registerButtonHandlers() {
     });
 
     // get access token
-    document.getElementById('getAccessToken').addEventListener('click', function() {
-        if (!liff.isLoggedIn() && !liff.isInClient()) {
-            alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
-        } else {
-            const accessToken = liff.getAccessToken();
-            document.getElementById('accessTokenField').textContent = accessToken;
-            toggleAccessToken();
-        }
-    });
+    // document.getElementById('getAccessToken').addEventListener('click', function() {
+    //     if (!liff.isLoggedIn() && !liff.isInClient()) {
+    //         alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+    //     } else {
+    //         const accessToken = liff.getAccessToken();
+    //         document.getElementById('accessTokenField').textContent = accessToken;
+    //         toggleAccessToken();
+    //     }
+    // });
 
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
@@ -174,9 +174,9 @@ function sendAlertIfNotInClient() {
 /**
 * Toggle access token data field
 */
-function toggleAccessToken() {
-    toggleElement('accessTokenData');
-}
+// function toggleAccessToken() {
+//     toggleElement('accessTokenData');
+// }
 
 /**
 * Toggle specified element
