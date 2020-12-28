@@ -68,9 +68,9 @@ function initializeApp() {
 
     // check if the user is logged in/out, and hidden inappropriate button
     if (liff.isLoggedIn()) {
-        document.getElementById('liffLoginButton').hidden = true;
+        document.getElementById('liffLoginButton').classList.toggle('hidden');
     } else {
-        document.getElementById('liffLogoutButton').hidden = true;
+        document.getElementById('liffLogoutButton').classList.toggle('hidden');
     }
 }
 
