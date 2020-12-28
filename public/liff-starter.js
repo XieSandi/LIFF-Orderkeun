@@ -81,7 +81,7 @@ function fetchProfile(){
       document.getElementById('fetchName').textContent = profile.displayName;
       document.getElementById('fetchPhoto').src = profile.pictureUrl;
       /** Testing **/
-      console.log('DisplayName : '+profile.displayName);
+      console.log(profile.displayName);
     })
     .catch((err) => {
       console.log('error', err);
@@ -99,7 +99,6 @@ function displayIsInClientInfo() {
     } else {
         document.getElementById('openWindowButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via browser';
-        document.getElementById('shareTargetPicker').classList.toggle('hidden');
     }
 }
 
