@@ -95,9 +95,9 @@ function displayIsInClientInfo() {
     if (liff.isInClient()) {
         document.getElementById('liffLoginButton').classList.toggle('hidden');
         document.getElementById('liffLogoutButton').classList.toggle('hidden');
+        document.getElementById('openWindowButton').style = "";
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via Line.';
     } else {
-        document.getElementById('openWindowButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'Kamu buka aplikasi nya via browser';
     }
 }
