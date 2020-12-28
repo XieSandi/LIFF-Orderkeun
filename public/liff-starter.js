@@ -87,15 +87,15 @@ function fetchProfile(){
     });
 }
 
-function pesan(paket){
+function pesan(paket,harga){
     if (!liff.isInClient()) {
         sendAlertIfNotInClient();
     } else {
-      var showConfirm = confirm("Pesan yang ini ?" + paket)
+      var showConfirm = confirm("Pesan " + paket + " ?")
       if (showConfirm == true){
         liff.sendMessages([{
             'type': 'text',
-            'text': "Kamu Pesen" + paket
+            'text': "Hallo , Aku Pesen " + paket + " seharga " + harga
         }]).then(function() {
             window.alert('Message sent');
         }).catch(function(error) {
@@ -123,7 +123,7 @@ function displayIsInClientInfo() {
 }
 
 /**
-* Register event handlers for the buttons displayed in the app
+* Event handler for button
 */
 function registerButtonHandlers() {
 
@@ -133,27 +133,6 @@ function registerButtonHandlers() {
             url: 'https://liff-orderkeun.herokuapp.com',
             external: true
         });
-    });
-
-    // sendMessages call
-    document.getElementById('sendMessageButton').addEventListener('click', function() {
-        if (!liff.isInClient()) {
-            sendAlertIfNotInClient();
-        } else {
-          var showConfirm = confirm("Pesan yang ini ?")
-          if (showConfirm == true){
-            liff.sendMessages([{
-                'type': 'text',
-                'text': "You've successfully sent a message! Hooray!"
-            }]).then(function() {
-                window.alert('Message sent');
-            }).catch(function(error) {
-                window.alert('Error sending message: ' + error);
-            });
-            liff.closeWindow();
-            }
-          else{}
-        }
     });
 
     // login call, only when external browser is used
