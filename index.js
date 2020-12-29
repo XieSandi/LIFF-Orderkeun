@@ -26,39 +26,41 @@ app.post('/callback', line.middleware(config), (req, res) => {
   
   // event handler
   function handleEvent(event) {
-    if (event.type !== 'message' || event.message.type !== 'text') {
-      // ignore non-text-message event
-      return Promise.resolve(null);
-    }
+    // if (event.type !== 'message' || event.message.type !== 'text' || event.message.text == 'Pesan') {
+    //   // ignore non-text-message event
+    //   return Promise.resolve(null);
+    // }
   
     // create a echoing text message
-    const echo = { type: 'text', text: event.message.text };
+    // const echo = { type: 'text', text: event.message.text };
   
     // use reply API
-    return client.replyMessage
-        (event.replyToken,
-            {
-                "type": "flex",
-                "altText": "this is a flex message",
-                "contents": {
-                "type": "bubble",
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                    {
-                        "type": "text",
-                        "text": "hello"
-                    },
-                    {
-                        "type": "text",
-                        "text": "world"
+    if (event.type == 'message' || event.message.type == 'text' || event.message.text == 'Pesan') {
+        return client.replyMessage
+            (event.replyToken,
+                {
+                    "type": "flex",
+                    "altText": "this is a flex message",
+                    "contents": {
+                    "type": "bubble",
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": "hello"
+                        },
+                        {
+                            "type": "text",
+                            "text": "world"
+                        }
+                        ]
                     }
-                    ]
+                    }
                 }
-                }
-            }
-        );
+            );
+    }
   }  
 
 app.use(express.static('public'));
