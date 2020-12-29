@@ -25,56 +25,41 @@ app.post('/callback', line.middleware(config), (req, res) => {
   });
   
   // event handler
-//   function handleEvent(event) {
-//     if (event.type !== 'message' || event.message.type !== 'text') {
-//       // ignore non-text-message event
-//       return Promise.resolve(null);
-//     }
-  
-//     // create a echoing text message
-//     // const echo = { type: 'text', text: event.message.text };
-  
-//     // use reply API
-//     return client.replyMessage(event.replyToken, echo);
-//   }  
-
-  function handleText(message, replyToken, source) {
-    switch (message.text) {
-        case 'profile':
-          if (source.userId) {
-            return client.getProfile(source.userId)
-              .then((profile) => replyText(
-                replyToken,
-                [
-                  `Display name: ${profile.displayName}`,
-                  `Status message: ${profile.statusMessage}`,
-                ]
-              ));
-          } else {
-            return replyText(replyToken, 'Bot can\'t use profile API without user ID');
-          }
-        case 'buttons':
-          return client.replyMessage(
-            replyToken,
-            {
-              type: 'template',
-              altText: 'Buttons alt text',
-              template: {
-                type: 'buttons',
-                thumbnailImageUrl: buttonsImageURL,
-                title: 'My button sample',
-                text: 'Hello, my button',
-                actions: [
-                  { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-                  { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-                  { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-                  { label: 'Say message', type: 'message', text: 'Rice=米' },
-                ],
-              },
-            }
-          );
-        }
+  function handleEvent(event) {
+    if (event.type !== 'message' || event.message.type !== 'text') {
+      // ignore non-text-message event
+      return Promise.resolve(null);
     }
+  
+    // create a echoing text message
+    const echo = { type: 'text', text: event.message.text };
+  
+    // use reply API
+    return client.replyMessage
+        (event.replyToken,
+            {
+                "type": "flex",
+                "altText": "this is a flex message",
+                "contents": {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": "hello"
+                    },
+                    {
+                        "type": "text",
+                        "text": "world"
+                    }
+                    ]
+                }
+                }
+            }
+        );
+  }  
 
 app.use(express.static('public'));
 
