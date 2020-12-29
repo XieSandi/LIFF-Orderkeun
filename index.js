@@ -27,31 +27,34 @@ app.post('/callback', line.middleware(config), (req, res) => {
   // event handler
   function handleEvent(event) {
     // event.type == 'message' || event.message.type == 'text' || 
-    if (event.type == 'message' && event.message.type == 'text' && event.message.text == 'Pesan') {
-        return client.replyMessage
-            (event.replyToken,
-                {
-                    "type": "flex",
-                    "altText": "this is a flex message",
-                    "contents": {
-                    "type": "bubble",
-                    "body": {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                        {
-                            "type": "text",
-                            "text": "hello"
-                        },
-                        {
-                            "type": "text",
-                            "text": "world"
+    if (event.type == 'message' && event.message.type == 'text') {
+        if(event.message.text == 'Pesan'){
+            return client.replyMessage
+                (event.replyToken,
+                    {
+                        "type": "flex",
+                        "altText": "this is a flex message",
+                        "contents": {
+                        "type": "bubble",
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                            {
+                                "type": "text",
+                                "text": "hello"
+                            },
+                            {
+                                "type": "text",
+                                "text": "world"
+                            }
+                            ]
                         }
-                        ]
+                        }
                     }
-                    }
-                }
-            );
+                );
+        }
+        
     }
   }  
 
