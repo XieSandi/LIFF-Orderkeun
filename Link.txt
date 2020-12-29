@@ -1,0 +1,7 @@
+Source code	: https://github.com/XieSandi/LIFF-Orderkeun
+OA ID		: @209sltvp
+LIFF URL	: https://liff.line.me/1655380958-5NVKkZBY
+End Point	: https://liff-orderkeun.herokuapp.com/
+
+Build Based on LIFF V2 Starter
+Base		: https://github.com/line/line-liff-v2-starter
