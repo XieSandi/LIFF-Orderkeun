@@ -26,7 +26,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
       });
   });
 
-//fetch user
 client.getProfile('<userId>')
   .then((profile) => {
     console.log(profile.displayName);
@@ -132,13 +131,12 @@ client.getProfile('<userId>')
                     }
                 );
         }
-
         else{
             return client.replyMessage
                 (event.replyToken,
                     {
                         "type": "text",
-                        "text": "Hai " + profile.displayName
+                        "text": "Hai "
                     }
                 )
         }
