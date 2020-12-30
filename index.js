@@ -160,7 +160,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                 (event.replyToken,
                     {
                         "type": "text",
-                        'text': "Ketik 'Pesan' untuk memulai ya " + profile.displayName
+                        'text': "Ketik 'Pesan' untuk memulai ya "
                     }
                 )
 
