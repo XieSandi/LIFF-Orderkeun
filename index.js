@@ -26,20 +26,20 @@ app.post('/callback', line.middleware(config), (req, res) => {
       });
   });
 
-client.getProfile('<userId>')
-  .then((profile) => {
-    console.log(profile.displayName);
-    console.log(profile.userId);
-    console.log(profile.pictureUrl);
-    console.log(profile.statusMessage);
-  })
-  .catch((err) => {
-    // error handling
-  })
+// client.getProfile('<userId>')
+//   .then((profile) => {
+//     console.log(profile.displayName);
+//     console.log(profile.userId);
+//     console.log(profile.pictureUrl);
+//     console.log(profile.statusMessage);
+//   })
+//   .catch((err) => {
+//     // error handling
+//   })
   
   // event handler
   function handleEvent(event) {
-      
+
     client.getProfile('<userId>')
     .then((profile) => {
       console.log(profile.displayName);
