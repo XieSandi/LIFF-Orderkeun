@@ -59,7 +59,7 @@ client.getProfile('<userId>')
                             "contents": [
                                 {
                                 "type": "text",
-                                "text": "Laper ?",
+                                "text": "LAPER ?",
                                 "size": "xl",
                                 "weight": "bold",
                                 }
@@ -95,8 +95,10 @@ client.getProfile('<userId>')
                                     "action": {
                                     "type": "uri",
                                     "label": "MULAI MEMESAN",
-                                    "uri": "https://liff-orderkeun.herokuapp.com/"
+                                    "uri": "https://liff.line.me/1655380958-5NVKkZBY"
                                     },
+                                    "style": "secondary",
+                                    "color": "#ffffff"
                                 }
                             ]
                             }
