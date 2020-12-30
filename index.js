@@ -65,7 +65,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                     }
                 );
         }
-        else if(messageKey == 'coba'){
+        if(messageKey == 'coba'){
             return client.replyMessage
                 (event.replyToken,
                     {
