@@ -80,7 +80,9 @@ client.getProfile('<userId>')
                             "contents": [
                                 {
                                 "type": "text",
-                                "text": "Sini di Orderkeun !"
+                                "text": "Sini di Orderkeun !",
+                                "size": "xl",
+                                "weight": "bold",=
                                 }
                             ],
                             "justifyContent": "space-evenly",
@@ -113,37 +115,64 @@ client.getProfile('<userId>')
                 (event.replyToken,
                     {
                         "type": "flex",
-                        "altText": "Konfirm Pesan Paket Hemat",
+                        "altText": "Ini menu flex untuk pesan",
                         "contents": {
-                          "type": "bubble",
-                          "body": {
+                            "type": "bubble",
+                            
+                            "header": {
                             "type": "box",
                             "layout": "vertical",
                             "contents": [
                                 {
-                                    "type": "image",
-                                    "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/1.jpg?raw=true",
-                                    "size": "300px"
-                                },
+                                "type": "text",
+                                "text": "PESANAN DITERIMA",
+                                "size": "xl",
+                                "weight": "bold"
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
+                            },
+                            "hero": {
+                            "type": "image",
+                            "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/1.jpg?raw=true",
+                            "size": "300px"
+                            },
+
+                            "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
                                 {
-                                    "type": "text",
-                                    'text': "Anda Memesan 'Paket Hemat'"
-                                },
+                                "type": "text",
+                                "text": "Kamu pesan 'Paket Hemat'"
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
+                            },
+                            "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
                                 {
                                     "type": "separator",
                                     "color": "#000000"
                                 },
                                 {
                                     "type": "text",
-                                    'text': "Terima kasih telah memesan",
+                                    'text': "TERIMA KASIH",
+                                    "size": "xl",
                                     "weight": "bold"
                                 }
                             ],
                             "justifyContent": "space-evenly",
                             "alignItems": "center"
-                          }
+                            }
                         }
-                      }
+                    }
                 );
         }
 
@@ -200,46 +229,16 @@ client.getProfile('<userId>')
                                 },
                                 {
                                     "type": "text",
-                                    'text': "Terima kasih telah memesan",
+                                    'text': "TERIMA KASIH",
+                                    "size": "xl",
                                     "weight": "bold"
                                 }
-                            ]
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
                             }
                         }
                     }
-                    // {
-                    //     "type": "flex",
-                    //     "altText": "Konfirm Pesan Paket Kenyang",
-                    //     "contents": {
-                    //       "type": "bubble",
-                    //       "body": {
-                    //         "type": "box",
-                    //         "layout": "vertical",
-                    //         "contents": [
-                    //             {
-                    //                 "type": "image",
-                    //                 "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/2.jpg?raw=true",
-                    //                 "size": "300px"
-                    //             },
-                    //             {
-                    //                 "type": "text",
-                    //                 'text': "Anda memesan 'Paket Kenyang'"
-                    //             },
-                    //             {
-                    //                 "type": "separator",
-                    //                 "color": "#000000"
-                    //             },
-                    //             {
-                    //                 "type": "text",
-                    //                 'text': "Terima kasih telah memesan",
-                    //                 "weight": "bold"
-                    //             }
-                    //         ],
-                    //         "justifyContent": "space-evenly",
-                    //         "alignItems": "center"
-                    //       }
-                    //     }
-                    //   }
                 );
         }
 
@@ -324,32 +323,63 @@ client.getProfile('<userId>')
                 (event.replyToken,
                     {
                         "type": "flex",
-                        "altText": "this is a flex message",
+                        "altText": "Unkown-Keyword",
                         "contents": {
-                          "type": "bubble",
-                          "body": {
+                            "type": "bubble",
+                            
+                            "header": {
                             "type": "box",
                             "layout": "vertical",
                             "contents": [
                                 {
-                                    "type": "image",
-                                    "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/404.jpg?raw=true",
-                                    "size": "300px"
-                                },
-                                {
-                                    "type": "text",
-                                    'text': "Perintah tidak dapat ditemukan"
-                                },
-                                {
-                                    "type": "text",
-                                    'text': "Silahkan ketik 'Pesan' untuk memulai"
+                                "type": "text",
+                                "text": "Perintah tidak dapat ditemukan",
+                                "size": "xl",
                                 }
                             ],
                             "justifyContent": "space-evenly",
                             "alignItems": "center"
-                          }
+
+                            },
+                            "hero": {
+                            "type": "image",
+                            "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/404.jpg?raw=true",
+                            "size": "300px"
+                            },
+
+                            "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Ketik 'Pesan' untuk memulai",
+                                "size": "xl",
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
+                            },
+                            "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "separator",
+                                    "color": "#000000"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Salam hangat dari Orderkeun",
+                                    "size": "sm",
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+                            }
                         }
-                      }
+                    }
                 );
         }
         
