@@ -163,7 +163,7 @@ client.getProfile('<userId>')
                                 },
                                 {
                                     "type": "text",
-                                    'text': "Pesanan anda 'Paket Kenyang' seharga Rp 50.000,-"
+                                    'text': "Anda memesan 'Paket Kenyang'"
                                 },
                                 {
                                     "type": "separator",
