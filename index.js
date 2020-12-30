@@ -123,7 +123,9 @@ client.getProfile('<userId>')
                             "contents": [
                                 {
                                 "type": "text",
-                                "text": "Laper ?"
+                                "text": "Laper ?",
+                                "size": "xl",
+                                "weight": "bold",
                                 }
                             ],
                             "justifyContent": "space-evenly",
@@ -132,7 +134,7 @@ client.getProfile('<userId>')
                             },
                             "hero": {
                             "type": "image",
-                            "url": "https://example.com/flex/images/image.jpg"
+                            "url": "https://image.freepik.com/free-vector/cheeseboard-hand-drawn-illustration_23-2148796986.jpg"
                             },
 
                             "body": {
