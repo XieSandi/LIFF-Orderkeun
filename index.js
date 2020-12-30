@@ -26,16 +26,16 @@ app.post('/callback', line.middleware(config), (req, res) => {
       });
   });
   
-// client.getProfile('<userId>')
-//   .then((profile) => {
-//     console.log(profile.displayName);
-//     console.log(profile.userId);
-//     console.log(profile.pictureUrl);
-//     console.log(profile.statusMessage);
-//   })
-//   .catch((err) => {
-//     // error handling
-//   })
+client.getProfile('<userId>')
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+  })
 
   // event handler
   function handleEvent(event) {
@@ -121,15 +121,11 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "contents": [
                                 {
                                     "type": "image",
-                                    "url": "img\1.jfif"
+                                    "url": "https://images.unsplash.com/photo-1602192103201-d763907bc41b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                                 },
                                 {
                                     "type": "text",
-                                    'text': "Pesanan anda 'Paket Hemat'"
-                                },
-                                {
-                                    "type": "text",
-                                    'text': "seharga Rp 30.000,-"
+                                    'text': "Pesanan anda 'Paket Hemat' seharga Rp 30.000,-"
                                 },
                                 {
                                     "type": "separator",
@@ -163,15 +159,11 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "contents": [
                                 {
                                     "type": "image",
-                                    "url": "img\2.jfif"
+                                    "url": "https://images.unsplash.com/photo-1602192103201-d763907bc41b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                                 },
                                 {
                                     "type": "text",
-                                    'text': "Pesanan anda 'Paket Kenyang'"
-                                },
-                                {
-                                    "type": "text",
-                                    'text': "seharga Rp 50.000,-"
+                                    'text': "Pesanan anda 'Paket Kenyang' seharga Rp 50.000,-"
                                 },
                                 {
                                     "type": "separator",
@@ -263,23 +255,8 @@ app.post('/callback', line.middleware(config), (req, res) => {
                         "stickerId": "52002744"
                     },
                 );
-        }
+        } 
         
-        // else if(messageKey == 'sticker'){
-        //     if (source.userId) {
-        //         return client.getProfile(source.userId)
-        //         .then((profile) => replyText(
-        //             replyToken,
-        //             [
-        //             `Display name: ${profile.displayName}`,
-        //             `Status message: ${profile.statusMessage}`,
-        //             ]
-        //         ));
-        //     } else {
-        //         return replyText(replyToken, 'Bot can\'t use profile API without user ID');
-        //     }
-        // }
-
         // sent msg when Key doesn't match
         else{
             return client.replyMessage
@@ -295,8 +272,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "contents": [
                                 {
                                     "type": "image",
-                                    "url": "img\404.jpg",
-                                    "size": "lg"
+                                    "url": "https://image.freepik.com/free-vector/lost-concept-illustration_114360-1096.jpg"
                                 },
                                 {
                                     "type": "text",
