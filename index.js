@@ -124,9 +124,9 @@ client.getProfile('<userId>')
                             "type": "box",
                             "layout": "vertical",
                             "contents": [
-                                {
-                                    "type": "separator"
-                                },
+                                // {
+                                //     "type": "separator"
+                                // },
                                 {
                                 "type": "text",
                                 "text": "Sini di Orderkeun !"
@@ -155,6 +155,11 @@ client.getProfile('<userId>')
             return client.replyMessage
                 (event.replyToken,
                     {
+                            "type": "sticker",
+                            "packageId": "11537",
+                            "stickerId": "52002744"
+                    },
+                    {
                         "type": "flex",
                         "altText": "this is a flex message",
                         "contents": {
@@ -163,11 +168,11 @@ client.getProfile('<userId>')
                             "type": "box",
                             "layout": "vertical",
                             "contents": [
-                                {
-                                    "type": "sticker",
-                                    "packageId": "11537",
-                                    "stickerId": "52002744"
-                                },
+                                // {
+                                //     "type": "sticker",
+                                //     "packageId": "11537",
+                                //     "stickerId": "52002744"
+                                // },
                                 {
                                     "type": "text",
                                     'text': "Perintah tidak dapat ditemukan"
@@ -177,8 +182,8 @@ client.getProfile('<userId>')
                                     'text': "Ketik 'Pesan' untuk memulai ya"
                                 }
                             ],
-                            "justifyContent": "space-evenly",
-                            "alignItems": "center"
+                            // "justifyContent": "space-evenly",
+                            // "alignItems": "center"
                           }
                         }
                       }
