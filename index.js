@@ -96,7 +96,7 @@ client.getProfile('<userId>')
                 );
         }
 
-        else if(messageKey == "hallo! aku pesen 'paket hemat' seharga rp 50.000"){
+        else if(messageKey == "hallo! aku pesen 'paket hemat' seharga rp 30.000"){
             return client.replyMessage
                 (event.replyToken,
                     {
