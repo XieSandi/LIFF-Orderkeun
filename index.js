@@ -157,14 +157,16 @@ client.getProfile('<userId>')
                         "packageId": "11537",
                         "stickerId": "52002744"
                     },
+                )
+                (event.replyToken,
                     {
                         "type": "text",
                         'text': "Ketik 'Pesan' untuk memulai ya"
-                    }
+                    },
                 );
         
         } 
-
+         
         else{
             return client.replyMessage
                 (event.replyToken,
