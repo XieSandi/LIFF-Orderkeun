@@ -82,7 +82,7 @@ client.getProfile('<userId>')
                                 "type": "text",
                                 "text": "Sini di Orderkeun !",
                                 "size": "xl",
-                                "weight": "bold",=
+                                "weight": "bold",
                                 }
                             ],
                             "justifyContent": "space-evenly",
