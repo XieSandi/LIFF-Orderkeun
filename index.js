@@ -47,7 +47,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             {
                                 "type": "text",
                                 "text": "world"
-                            }
+                            },
                             {
                                 "type": "button",
                                 "action": {
