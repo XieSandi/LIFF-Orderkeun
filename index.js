@@ -87,7 +87,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "contents": [
                                 {
                                 "type": "text",
-                                "text": "Header text"
+                                "text": "Laper ?"
                                 }
                             ]
                             },
@@ -101,7 +101,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "contents": [
                                 {
                                 "type": "text",
-                                "text": "Body text"
+                                "text": "Sini di Orderkeun !"
                                 }
                             ]
                             },
@@ -110,10 +110,10 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "layout": "vertical",
                             "contents": [
                                 {
-                                    "type": "MULAI MEMESAN",
+                                    "type": "button",
                                     "action": {
                                     "type": "uri",
-                                    "label": "Tap me",
+                                    "label": "MULAI MEMESAN",
                                     "uri": "https://liff-orderkeun.herokuapp.com/"
                                     },
                                     "style": "secondary",
