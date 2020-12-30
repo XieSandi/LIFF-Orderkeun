@@ -14,6 +14,8 @@ const client = new line.Client(config);
 
 const app = express();
 
+app.get('/callback', (req, res) => res.end(`I'm listening. Please access with POST.`));
+
 app.post('/callback', line.middleware(config), (req, res) => {
     Promise
       .all(req.body.events.map(handleEvent))
@@ -26,7 +28,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
   
   // event handler
   function handleEvent(event) {
-    // event.type == 'message' || event.message.type == 'text' || 
     if (event.type == 'message' && event.message.type == 'text') {
         var messageKey = event.message.text.toLowerCase();
         if(messageKey == 'pesan'){
@@ -65,55 +66,62 @@ app.post('/callback', line.middleware(config), (req, res) => {
                     }
                 );
         }
-        if(messageKey == 'coba'){
+
+        else if(messageKey == 'coba'){
             return client.replyMessage
                 (event.replyToken,
                     {
-                        "type": "flex",
-                        "altText": "Ini menu flex untuk pesan",
-                        "contents": {
-                            "type": "bubble",
-                            "header": {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                                {
-                                "type": "text",
-                                "text": "Header text"
-                                }
-                            ]
-                            },
-                            "hero": {
-                            "type": "image",
-                            "url": "https://example.com/flex/images/image.jpg"
-                            },
-                            "body": {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                                {
-                                "type": "text",
-                                "text": "Body text"
-                                }
-                            ]
-                            },
-                            "footer": {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                                {
-                                "type": "text",
-                                "text": "Footer text"
-                                }
-                            ]
-                            },
-                            "styles": {
-                            "comment": "See the example of a bubble style object"
-                            }
-                        }
+                        "type": "text",
+                        "text": "COBA COBA"
                     }
+
+                    // {
+                    //     "type": "flex",
+                    //     "altText": "Ini menu flex untuk pesan",
+                    //     "contents": {
+                    //         "type": "bubble",
+                    //         "header": {
+                    //         "type": "box",
+                    //         "layout": "vertical",
+                    //         "contents": [
+                    //             {
+                    //             "type": "text",
+                    //             "text": "Header text"
+                    //             }
+                    //         ]
+                    //         },
+                    //         "hero": {
+                    //         "type": "image",
+                    //         "url": "https://example.com/flex/images/image.jpg"
+                    //         },
+                    //         "body": {
+                    //         "type": "box",
+                    //         "layout": "vertical",
+                    //         "contents": [
+                    //             {
+                    //             "type": "text",
+                    //             "text": "Body text"
+                    //             }
+                    //         ]
+                    //         },
+                    //         "footer": {
+                    //         "type": "box",
+                    //         "layout": "vertical",
+                    //         "contents": [
+                    //             {
+                    //             "type": "text",
+                    //             "text": "Footer text"
+                    //             }
+                    //         ]
+                    //         },
+                    //         "styles": {
+                    //         "comment": "See the example of a bubble style object"
+                    //         }
+                    //     }
+                    // }
                 );
         }
+
         else{
             return client.replyMessage
                 (event.replyToken,
