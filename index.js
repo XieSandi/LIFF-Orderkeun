@@ -59,14 +59,20 @@ client.getProfile('<userId>')
                             "contents": [
                                 {
                                 "type": "text",
-                                "text": "Laper ?"
+                                "text": "Laper ?",
+                                "size": "xl",
+                                "weight": "bold",
                                 }
-                            ]
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
                             },
                             "hero": {
                             "type": "image",
-                            "url": "https://example.com/flex/images/image.jpg"
+                            "url": "https://image.freepik.com/free-vector/cheeseboard-hand-drawn-illustration_23-2148796986.jpg"
                             },
+
                             "body": {
                             "type": "box",
                             "layout": "vertical",
@@ -75,7 +81,10 @@ client.getProfile('<userId>')
                                 "type": "text",
                                 "text": "Sini di Orderkeun !"
                                 }
-                            ]
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
                             },
                             "footer": {
                             "type": "box",
@@ -86,10 +95,10 @@ client.getProfile('<userId>')
                                     "action": {
                                     "type": "uri",
                                     "label": "MULAI MEMESAN",
-                                    "uri": "https://liff.line.me/1655380958-5NVKkZBY"
+                                    "uri": "https://liff-orderkeun.herokuapp.com/"
                                     },
                                 }
-                            ],
+                            ]
                             }
                         }
                     }
@@ -180,7 +189,8 @@ client.getProfile('<userId>')
                     },
                 );
         } 
-         
+        
+        // sent msg when Key doesn't match
         else{
             return client.replyMessage
                 (event.replyToken,
@@ -193,6 +203,10 @@ client.getProfile('<userId>')
                             "type": "box",
                             "layout": "vertical",
                             "contents": [
+                                {
+                                    "type": "image",
+                                    "url": "https://image.freepik.com/free-vector/lost-concept-illustration_114360-1096.jpg"
+                                },
                                 {
                                     "type": "text",
                                     'text': "Perintah tidak dapat ditemukan"
