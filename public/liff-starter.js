@@ -96,7 +96,7 @@ function pesan(paket,harga){
       if (showConfirm == true){
         liff.sendMessages([{
             'type': 'text',
-            'text': "Hallo! Aku pesen " + paket
+            'text': "Hallo! Aku pesen '" + paket + "' seharga " + harga
         }]).then(function() {
             window.alert('Message sent');
         }).catch(function(error) {
