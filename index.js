@@ -36,31 +36,31 @@ app.post('/callback', line.middleware(config), (req, res) => {
                         "type": "flex",
                         "altText": "Ini menu flex untuk pesan",
                         "contents": {
-                        "type": "bubble",
-                        "body": {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "text",
-                                "text": "hello"
-                            },
-                            {
-                                "type": "text",
-                                "text": "world"
-                            },
-                            {
-                                "type": "button",
-                                "action": {
-                                  "type": "uri",
-                                  "label": "Tap me",
-                                  "uri": "https://example.com"
+                            "type": "bubble",
+                            "body": {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "hello"
                                 },
-                                "style": "primary",
-                                "color": "#0000ff"
-                              }
-                            ]
-                        }
+                                {
+                                    "type": "text",
+                                    "text": "world"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                    "type": "uri",
+                                    "label": "Tap me",
+                                    "uri": "https://example.com"
+                                    },
+                                    "style": "primary",
+                                    "color": "#0000ff"
+                                }
+                                ]
+                            }
                         }
                     }
                 );
@@ -69,45 +69,49 @@ app.post('/callback', line.middleware(config), (req, res) => {
             return client.replyMessage
                 (event.replyToken,
                     {
-                        "type": "bubble",
-                        "header": {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "Header text"
+                        "type": "flex",
+                        "altText": "Ini menu flex untuk pesan",
+                        "contents": {
+                            "type": "bubble",
+                            "header": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Header text"
+                                }
+                            ]
+                            },
+                            "hero": {
+                            "type": "image",
+                            "url": "https://example.com/flex/images/image.jpg"
+                            },
+                            "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Body text"
+                                }
+                            ]
+                            },
+                            "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Footer text"
+                                }
+                            ]
+                            },
+                            "styles": {
+                            "comment": "See the example of a bubble style object"
                             }
-                          ]
-                        },
-                        "hero": {
-                          "type": "image",
-                          "url": "https://example.com/flex/images/image.jpg"
-                        },
-                        "body": {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "Body text"
-                            }
-                          ]
-                        },
-                        "footer": {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "Footer text"
-                            }
-                          ]
-                        },
-                        "styles": {
-                          "comment": "See the example of a bubble style object"
                         }
-                      }
+                    }
                 );
         }
         else{
