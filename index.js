@@ -80,7 +80,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                         "altText": "Ini menu flex untuk pesan",
                         "contents": {
                             "type": "bubble",
-
+                            
                             "header": {
                             "type": "box",
                             "layout": "vertical",
@@ -90,6 +90,10 @@ app.post('/callback', line.middleware(config), (req, res) => {
                                 "text": "Header text"
                                 }
                             ]
+                            },
+                            "hero": {
+                            "type": "image",
+                            "url": "https://example.com/flex/images/image.jpg"
                             },
                             "body": {
                             "type": "box",
@@ -111,6 +115,9 @@ app.post('/callback', line.middleware(config), (req, res) => {
                                 }
                             ]
                             }
+                            // "styles": {
+                            // "comment": "See the example of a bubble style object"
+                            // }
                         }
                     }
                 );
