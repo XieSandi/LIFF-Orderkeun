@@ -25,6 +25,18 @@ app.post('/callback', line.middleware(config), (req, res) => {
         res.status(500).end();
       });
   });
+
+//fetch user
+client.getProfile('<userId>')
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+  })
   
   // event handler
   function handleEvent(event) {
@@ -70,11 +82,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
         else if(messageKey == 'coba'){
             return client.replyMessage
                 (event.replyToken,
-                    // {
-                    //     "type": "text",
-                    //     "text": "COBA COBA"
-                    // }
-
                     {
                         "type": "flex",
                         "altText": "Ini menu flex untuk pesan",
@@ -131,7 +138,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
                 (event.replyToken,
                     {
                         "type": "text",
-                        "text": "Cant Find Command"
+                        "text": "Hai " + profile.displayName
                     }
                 )
         }
