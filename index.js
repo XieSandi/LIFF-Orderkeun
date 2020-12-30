@@ -26,9 +26,9 @@ app.post('/callback', line.middleware(config), (req, res) => {
   
   // event handler
   function handleEvent(event) {
-    // event.type == 'message' || event.message.type == 'text' || 
+    // event.type == 'message' || event.message.type == 'text' || || event.message.text == 'pesan'
     if (event.type == 'message' && event.message.type == 'text') {
-        if(event.message.text == 'Pesan'|| event.message.text == 'pesan'){
+        if(event.message.text == 'Pesan'){
             return client.replyMessage
                 (event.replyToken,
                     {
