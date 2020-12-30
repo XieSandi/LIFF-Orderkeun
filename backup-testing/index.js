@@ -121,7 +121,7 @@ client.getProfile('<userId>')
                             "contents": [
                                 {
                                     "type": "image",
-                                    "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/1.jpg?raw=true"
+                                    "url": "https://images.unsplash.com/photo-1602192103201-d763907bc41b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                                 },
                                 {
                                     "type": "text",
@@ -210,7 +210,7 @@ client.getProfile('<userId>')
                             },
                             "hero": {
                             "type": "image",
-                            "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/2.jpg?raw=true"
+                            "url": "https://image.freepik.com/free-vector/cheeseboard-hand-drawn-illustration_23-2148796986.jpg"
                             },
 
                             "body": {
@@ -272,8 +272,7 @@ client.getProfile('<userId>')
                             "contents": [
                                 {
                                     "type": "image",
-                                    "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/404.jpg?raw=true",
-                                    "size": "xl"
+                                    "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/404.jpg?raw=true"
                                 },
                                 {
                                     "type": "text",
