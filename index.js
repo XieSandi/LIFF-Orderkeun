@@ -273,7 +273,7 @@ client.getProfile('<userId>')
                                 {
                                     "type": "image",
                                     "url": "https://github.com/XieSandi/LIFF-Orderkeun/blob/main/img/404.jpg?raw=true",
-                                    "size": "xl"
+                                    "size": "300px"
                                 },
                                 {
                                     "type": "text",
