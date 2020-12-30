@@ -96,7 +96,19 @@ client.getProfile('<userId>')
                 );
         }
 
-        else if(messageKey == "Hallo! Aku pesen 'Paket Hemat' seharga rp 50.000"){
+        else if(messageKey == "hallo! aku pesen 'paket hemat' seharga rp 50.000"){
+            return client.replyMessage
+                (event.replyToken,
+                    {
+                        "type": "sticker",
+                        "packageId": "11537",
+                        "stickerId": "52002744"
+                    }
+                );
+        }
+
+        // testing purpose
+        else if(messageKey == 'coba'){
             return client.replyMessage
                 (event.replyToken,
                     {
@@ -145,65 +157,6 @@ client.getProfile('<userId>')
                             }
                         }
                     }
-                );
-        }
-
-        // testing purpose
-        else if(messageKey == 'coba'){
-            return client.replyMessage
-                    (event.replyToken,
-                        {
-                            "type": "sticker",
-                            "packageId": "11537",
-                            "stickerId": "52002744"
-                        }
-
-                    // {
-                    //     "type": "flex",
-                    //     "altText": "Ini menu flex untuk pesan",
-                    //     "contents": {
-                    //         "type": "bubble",
-                            
-                    //         "header": {
-                    //         "type": "box",
-                    //         "layout": "vertical",
-                    //         "contents": [
-                    //             {
-                    //             "type": "text",
-                    //             "text": "Laper ?"
-                    //             }
-                    //         ]
-                    //         },
-                    //         "hero": {
-                    //         "type": "image",
-                    //         "url": "https://example.com/flex/images/image.jpg"
-                    //         },
-                    //         "body": {
-                    //         "type": "box",
-                    //         "layout": "vertical",
-                    //         "contents": [
-                    //             {
-                    //             "type": "text",
-                    //             "text": "Sini di Orderkeun !"
-                    //             }
-                    //         ]
-                    //         },
-                    //         "footer": {
-                    //         "type": "box",
-                    //         "layout": "vertical",
-                    //         "contents": [
-                    //             {
-                    //                 "type": "button",
-                    //                 "action": {
-                    //                 "type": "uri",
-                    //                 "label": "MULAI MEMESAN",
-                    //                 "uri": "https://liff-orderkeun.herokuapp.com/"
-                    //                 },
-                    //             }
-                    //         ]
-                    //         }
-                    //     }
-                    // }
                 );
         }
 
