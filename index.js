@@ -41,6 +41,8 @@ client.getProfile('<userId>')
   function handleEvent(event) {
     if (event.type == 'message' && event.message.type == 'text') {
         var messageKey = event.message.text.toLowerCase();
+        
+        // show flex that can redirect into LIFF app from chat
         if(messageKey == 'pesan'){
             return client.replyMessage
                 (event.replyToken,
@@ -83,7 +85,7 @@ client.getProfile('<userId>')
                                     "action": {
                                     "type": "uri",
                                     "label": "MULAI MEMESAN",
-                                    "uri": "https://liff-orderkeun.herokuapp.com/"
+                                    "uri": "https://liff.line.me/1655380958-5NVKkZBY"
                                     },
                                 }
                             ]
@@ -92,7 +94,8 @@ client.getProfile('<userId>')
                     }
                 );
         }
-        //testing purpose
+
+        // testing purpose
         else if(messageKey == 'coba'){
             return client.replyMessage
                 (event.replyToken,
@@ -145,13 +148,13 @@ client.getProfile('<userId>')
                 );
         }
         else{
-            // return client.replyMessage
-            //     (event.replyToken,
-            //         {
-            //             "type": "text",
-            //             "text": "Hai"
-            //         }
-            //     )
+            return client.replyMessage
+                (event.replyToken,
+                    {
+                        "type": "text",
+                        'text': "Hai " + profile.displayName + " !"
+                    }
+                )
         }
         
     }
