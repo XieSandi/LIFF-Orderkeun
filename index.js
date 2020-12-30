@@ -97,8 +97,8 @@ client.getProfile('<userId>')
                                     "label": "MULAI MEMESAN",
                                     "uri": "https://liff.line.me/1655380958-5NVKkZBY"
                                     },
-                                    "style": "secondary",
-                                    "color": "#ffffff"
+                                    "style": "primary",
+                                    "color": "#0000ff"
                                 }
                             ]
                             }
@@ -111,10 +111,75 @@ client.getProfile('<userId>')
             return client.replyMessage
                 (event.replyToken,
                     {
-                        "type": "sticker",
-                        "packageId": "11537",
-                        "stickerId": "52002744"
-                    }
+                        "type": "flex",
+                        "altText": "Konfirm Pesan Paket Hemat",
+                        "contents": {
+                          "type": "bubble",
+                          "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "image",
+                                    "url": "https://images.unsplash.com/photo-1602192103201-d763907bc41b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Pesanan anda 'Paket Hemat' seharga Rp 30.000,-"
+                                },
+                                {
+                                    "type": "separator",
+                                    "color": "#000000"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Terima kasih telah memesan",
+                                    "weight": "bold"
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+                          }
+                        }
+                      }
+                );
+        }
+
+        else if(messageKey == "hallo! aku pesen 'paket kenyang' seharga rp 50.000"){
+            return client.replyMessage
+                (event.replyToken,
+                    {
+                        "type": "flex",
+                        "altText": "Konfirm Pesan Paket Kenyang",
+                        "contents": {
+                          "type": "bubble",
+                          "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "image",
+                                    "url": "https://images.unsplash.com/photo-1602192103201-d763907bc41b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Pesanan anda 'Paket Kenyang' seharga Rp 50.000,-"
+                                },
+                                {
+                                    "type": "separator",
+                                    "color": "#000000"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Terima kasih telah memesan",
+                                    "weight": "bold"
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+                          }
+                        }
+                      }
                 );
         }
 
