@@ -89,7 +89,7 @@ client.getProfile('<userId>')
                                     "uri": "https://liff.line.me/1655380958-5NVKkZBY"
                                     },
                                 }
-                            ]
+                            ],
                             }
                         }
                     }
@@ -125,6 +125,9 @@ client.getProfile('<userId>')
                             "layout": "vertical",
                             "contents": [
                                 {
+                                    "type": "separator"
+                                },
+                                {
                                 "type": "text",
                                 "text": "Sini di Orderkeun !"
                                 }
@@ -152,9 +155,33 @@ client.getProfile('<userId>')
             return client.replyMessage
                 (event.replyToken,
                     {
-                        "type": "text",
-                        'text': "Ketik 'Pesan' untuk memulai ya "
-                    }
+                        "type": "flex",
+                        "altText": "this is a flex message",
+                        "contents": {
+                          "type": "bubble",
+                          "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "sticker",
+                                    "packageId": "11537",
+                                    "stickerId": "52002744"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Perintah tidak dapat ditemukan"
+                                },
+                                {
+                                    "type": "text",
+                                    'text': "Ketik 'Pesan' untuk memulai ya"
+                                }
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+                          }
+                        }
+                      }
                 )
         }
         
