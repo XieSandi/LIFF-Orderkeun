@@ -110,8 +110,14 @@ app.post('/callback', line.middleware(config), (req, res) => {
                             "layout": "vertical",
                             "contents": [
                                 {
-                                "type": "text",
-                                "text": "Footer text"
+                                    "type": "MULAI MEMESAN",
+                                    "action": {
+                                    "type": "uri",
+                                    "label": "Tap me",
+                                    "uri": "https://liff-orderkeun.herokuapp.com/"
+                                    },
+                                    "style": "secondary",
+                                    "color": "#0000ff"
                                 }
                             ]
                             }
