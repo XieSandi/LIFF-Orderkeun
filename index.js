@@ -28,30 +28,49 @@ app.post('/callback', line.middleware(config), (req, res) => {
   function handleEvent(event) {
     // event.type == 'message' || event.message.type == 'text' || 
     if (event.type == 'message' && event.message.type == 'text') {
-        if(event.message.text == 'Pesan'){
+        if(event.message.text == 'Pesan'|| event.message.text == 'pesan'){
             return client.replyMessage
                 (event.replyToken,
                     {
-                        "type": "flex",
-                        "altText": "this is a flex message",
-                        "contents": {
                         "type": "bubble",
-                        "body": {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
+                        "header": {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
                             {
-                                "type": "text",
-                                "text": "hello"
-                            },
-                            {
-                                "type": "text",
-                                "text": "world"
+                              "type": "text",
+                              "text": "Header text"
                             }
-                            ]
+                          ]
+                        },
+                        "hero": {
+                          "type": "image",
+                          "url": "https://example.com/flex/images/image.jpg"
+                        },
+                        "body": {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "Body text"
+                            }
+                          ]
+                        },
+                        "footer": {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "Footer text"
+                            }
+                          ]
+                        },
+                        "styles": {
+                          "comment": "See the example of a bubble style object"
                         }
-                        }
-                    }
+                      }
                 );
         }
         
