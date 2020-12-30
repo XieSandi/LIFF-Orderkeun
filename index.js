@@ -76,9 +76,42 @@ app.post('/callback', line.middleware(config), (req, res) => {
                     // }
 
                     {
-                        "type": "image",
-                        "originalContentUrl": "https://example.com/original.jpg",
-                        "previewImageUrl": "https://example.com/preview.jpg"
+                        "type": "flex",
+                        "altText": "Ini menu flex untuk pesan",
+                        "contents": {
+                            "type": "bubble",
+
+                            "header": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Header text"
+                                }
+                            ]
+                            },
+                            "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Body text"
+                                }
+                            ]
+                            },
+                            "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Footer text"
+                                }
+                            ]
+                            }
+                        }
                     }
                 );
         }
