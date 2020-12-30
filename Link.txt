@@ -2,7 +2,8 @@ Source code	: https://github.com/XieSandi/LIFF-Orderkeun
 OA ID		: @209sltvp
 LIFF URL	: https://liff.line.me/1655380958-5NVKkZBY
 End Point	: https://liff-orderkeun.herokuapp.com/
-Callback    : https://liff-orderkeun.herokuapp.com/callback
+Callback    	: https://liff-orderkeun.herokuapp.com/callback
 
 Build Based on LIFF V2 Starter
-Base		: https://github.com/line/line-liff-v2-starter
+Base LIFF	: https://github.com/line/line-liff-v2-starter
+Base Bot	: https://github.com/line/line-bot-sdk-nodejs
