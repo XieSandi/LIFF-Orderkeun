@@ -121,9 +121,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
                                 }
                             ]
                             }
-                            // "styles": {
-                            // "comment": "See the example of a bubble style object"
-                            // }
                         }
                     }
                 );
