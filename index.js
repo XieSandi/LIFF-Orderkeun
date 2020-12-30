@@ -164,7 +164,7 @@ client.getProfile('<userId>')
                                 {
                                     "type": "text",
                                     'text': "TERIMA KASIH",
-                                    "size": "xl",
+                                    // "size": "xl",
                                     "weight": "bold"
                                 }
                             ],
@@ -230,7 +230,7 @@ client.getProfile('<userId>')
                                 {
                                     "type": "text",
                                     'text': "TERIMA KASIH",
-                                    "size": "xl",
+                                    // "size": "xl",
                                     "weight": "bold"
                                 }
                             ],
@@ -334,7 +334,7 @@ client.getProfile('<userId>')
                                 {
                                 "type": "text",
                                 "text": "Perintah tidak dapat ditemukan",
-                                "size": "xl",
+                                // "size": "xl",
                                 }
                             ],
                             "justifyContent": "space-evenly",
@@ -354,30 +354,30 @@ client.getProfile('<userId>')
                                 {
                                 "type": "text",
                                 "text": "Ketik 'Pesan' untuk memulai",
-                                "size": "xl",
+                                // "size": "xl",
                                 }
                             ],
                             "justifyContent": "space-evenly",
                             "alignItems": "center"
 
                             },
-                            "footer": {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                                {
-                                    "type": "separator",
-                                    "color": "#000000"
-                                },
-                                {
-                                    "type": "text",
-                                    'text': "Salam hangat dari Orderkeun",
-                                    "size": "sm",
-                                }
-                            ],
-                            "justifyContent": "space-evenly",
-                            "alignItems": "center"
-                            }
+                            // "footer": {
+                            // "type": "box",
+                            // "layout": "vertical",
+                            // "contents": [
+                            //     {
+                            //         "type": "separator",
+                            //         "color": "#000000"
+                            //     },
+                            //     {
+                            //         "type": "text",
+                            //         'text': "Salam hangat dari Orderkeun",
+                            //         "size": "sm",
+                            //     }
+                            // ],
+                            // "justifyContent": "space-evenly",
+                            // "alignItems": "center"
+                            // }
                         }
                     }
                 );
