@@ -92,7 +92,7 @@ client.getProfile('<userId>')
                     }
                 );
         }
-
+        //testing purpose
         else if(messageKey == 'coba'){
             return client.replyMessage
                 (event.replyToken,
@@ -145,13 +145,13 @@ client.getProfile('<userId>')
                 );
         }
         else{
-            return client.replyMessage
-                (event.replyToken,
-                    {
-                        "type": "text",
-                        "text": "Hai"
-                    }
-                )
+            // return client.replyMessage
+            //     (event.replyToken,
+            //         {
+            //             "type": "text",
+            //             "text": "Hai"
+            //         }
+            //     )
         }
         
     }
