@@ -125,12 +125,16 @@ client.getProfile('<userId>')
                                 "type": "text",
                                 "text": "Laper ?"
                                 }
-                            ]
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
                             },
                             "hero": {
                             "type": "image",
                             "url": "https://example.com/flex/images/image.jpg"
                             },
+
                             "body": {
                             "type": "box",
                             "layout": "vertical",
@@ -139,7 +143,10 @@ client.getProfile('<userId>')
                                 "type": "text",
                                 "text": "Sini di Orderkeun !"
                                 }
-                            ]
+                            ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
+
                             },
                             "footer": {
                             "type": "box",
@@ -193,6 +200,8 @@ client.getProfile('<userId>')
                                     'text': "Silahkan ketik 'Pesan' untuk memulai"
                                 }
                             ],
+                            "justifyContent": "space-evenly",
+                            "alignItems": "center"
                           }
                         }
                       }
