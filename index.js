@@ -26,51 +26,42 @@ app.post('/callback', line.middleware(config), (req, res) => {
   
   // event handler
   function handleEvent(event) {
-    // event.type == 'message' || event.message.type == 'text' || || event.message.text == 'pesan'
+    // event.type == 'message' || event.message.type == 'text' || 
     if (event.type == 'message' && event.message.type == 'text') {
-        if(event.message.text == 'Pesan'){
+        if(event.message.text == 'Pesan'|| event.message.text == 'pesan'){
             return client.replyMessage
                 (event.replyToken,
                     {
+                        "type": "flex",
+                        "altText": "Ini menu flex untuk pesan",
+                        "contents": {
                         "type": "bubble",
-                        "header": {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "Header text"
-                            }
-                          ]
-                        },
-                        "hero": {
-                          "type": "image",
-                          "url": "https://example.com/flex/images/image.jpg"
-                        },
                         "body": {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
                             {
-                              "type": "text",
-                              "text": "Body text"
-                            }
-                          ]
-                        },
-                        "footer": {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
+                                "type": "text",
+                                "text": "hello"
+                            },
                             {
-                              "type": "text",
-                              "text": "Footer text"
+                                "type": "text",
+                                "text": "world"
                             }
-                          ]
-                        },
-                        "styles": {
-                          "comment": "See the example of a bubble style object"
+                            {
+                                "type": "button",
+                                "action": {
+                                  "type": "uri",
+                                  "label": "Tap me",
+                                  "uri": "https://example.com"
+                                },
+                                "style": "primary",
+                                "color": "#0000ff"
+                              }
+                            ]
                         }
-                      }
+                        }
+                    }
                 );
         }
         
