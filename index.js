@@ -26,19 +26,19 @@ app.post('/callback', line.middleware(config), (req, res) => {
       });
   });
   
+client.getProfile('<userId>')
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+  })
+
   // event handler
   function handleEvent(event) {
-
-    // client.getProfile('<userId>')
-    // .then((profile) => {
-    //   console.log(profile.displayName);
-    //   console.log(profile.userId);
-    //   console.log(profile.pictureUrl);
-    //   console.log(profile.statusMessage);
-    // })
-    // .catch((err) => {
-    //   // error handling
-    // })
 
     if (event.type == 'message' && event.message.type == 'text') {
         var messageKey = event.message.text.toLowerCase();
@@ -149,32 +149,13 @@ app.post('/callback', line.middleware(config), (req, res) => {
                 );
         }
         else{
-            client.getProfile('<userId>')
-                .then((profile) => {
-                console.log(profile.displayName);
-                console.log(profile.userId);
-                console.log(profile.pictureUrl);
-                console.log(profile.statusMessage);
-
-                return client.replyMessage
+            return client.replyMessage
                 (event.replyToken,
                     {
                         "type": "text",
                         'text': "Ketik 'Pesan' untuk memulai ya "
                     }
                 )
-
-                })
-                .catch((err) => {
-                // error handling
-                })
-            // return client.replyMessage
-            //     (event.replyToken,
-            //         {
-            //             "type": "text",
-            //             'text': "Ketik 'Pesan' untuk memulai ya "
-            //         }
-            //     )
         }
         
     }
