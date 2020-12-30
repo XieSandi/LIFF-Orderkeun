@@ -49,29 +49,44 @@ client.getProfile('<userId>')
                         "altText": "Ini menu flex untuk pesan",
                         "contents": {
                             "type": "bubble",
+                            
+                            "header": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                "type": "text",
+                                "text": "Laper ?"
+                                }
+                            ]
+                            },
+                            "hero": {
+                            "type": "image",
+                            "url": "https://example.com/flex/images/image.jpg"
+                            },
                             "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
                                 {
-                                    "type": "text",
-                                    "text": "hello"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": "world"
-                                },
+                                "type": "text",
+                                "text": "Sini di Orderkeun !"
+                                }
+                            ]
+                            },
+                            "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
                                 {
                                     "type": "button",
                                     "action": {
                                     "type": "uri",
-                                    "label": "Tap me",
-                                    "uri": "https://example.com"
+                                    "label": "MULAI MEMESAN",
+                                    "uri": "https://liff-orderkeun.herokuapp.com/"
                                     },
-                                    "style": "primary",
-                                    "color": "#0000ff"
                                 }
-                                ]
+                            ]
                             }
                         }
                     }
@@ -122,8 +137,6 @@ client.getProfile('<userId>')
                                     "label": "MULAI MEMESAN",
                                     "uri": "https://liff-orderkeun.herokuapp.com/"
                                     },
-                                    "style": "secondary",
-                                    "color": "#0000ff"
                                 }
                             ]
                             }
@@ -136,7 +149,7 @@ client.getProfile('<userId>')
                 (event.replyToken,
                     {
                         "type": "text",
-                        "text": "Hai "
+                        "text": "Hai"
                     }
                 )
         }
